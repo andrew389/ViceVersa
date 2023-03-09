@@ -6,4 +6,5 @@ def home(request):
 
 def reverse(request):
 	message = request.GET['message']
-	return render(request, 'reverse.html', {'message': message[::-1]})
+	count_words = len(message.split())
+	return render(request, 'reverse.html', {'message': message[::-1]}, {'count_words': count_words})
